@@ -14,9 +14,10 @@ else
   set shortmess=aoO
 endif
 badd +2 prompts.csv
+badd +0 ~/Documents/Personal/custom-gpt-prompts
 argglobal
 %argdel
-$argadd .
+$argadd ~/Documents/Personal/custom-gpt-prompts
 edit prompts.csv
 wincmd t
 let s:save_winminheight = &winminheight
@@ -36,7 +37,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 2 - ((1 * winheight(0) + 32) / 64)
+let s:l = 2 - ((1 * winheight(0) + 31) / 63)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
